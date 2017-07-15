@@ -1,12 +1,8 @@
 FROM centos:latest
-RUN mkdir /workare
-RUN mkdir -p /usr/share/doc/R-3.4.0/html
-RUN mkdir -p /home/geo/prov
 
-COPY 65k_IMSI.rds /workarea/
-COPY demo_cells.rds /workarea/
-COPY pgen_1.0.0.tar.gz /workarea/ 
-COPY vertica-jdbc-7.1.2-0.jar /workarea/ 
+COPY pgen_1.0.0.tar.gz /workarea/
+COPY *.rds /workarea/
+COPY *.jar /workarea/ 
 COPY *.r /workarea/
 RUN chmod +x /workarea/*.r
 WORKDIR /workarea
