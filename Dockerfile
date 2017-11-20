@@ -4,8 +4,8 @@ MAINTAINER rick qiu
 RUN mkdir -p /usr/share/doc/R-3.4.0/html
 RUN yum -y update && yum clean all
 RUN yum install wget -y
-RUN wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-10.noarch.rpm
-RUN rpm -ivh epel-release-7-10.noarch.rpm
+RUN wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN rpm -ivh epel-release-latest-7.noarch.rpm
 RUN yum install R -y
 
 RUN echo "r <- getOption('repos'); r['CRAN'] <- 'http://cran.us.r-project.org'; options(repos = r);" > ~/.Rprofile
